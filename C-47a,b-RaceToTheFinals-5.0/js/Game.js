@@ -107,13 +107,18 @@ class Game
   {
     form.hide();
     Player.getPlayerInfo();
+    
     if(allPlayers!== undefined)
     {
+      var index=0;
       background("bg",backgroundImage);
       var goalKeeper = createSprite(200,200);
       goalKeeper.addImage("gk",goalKeepingGloves);
       goalKeeper.x = world.mouseX;
       goalKeeper.y = world.mouseY;
+      for (var plr in allPlayers){
+        
+      }
       this.match1();
       this.match2();
     }

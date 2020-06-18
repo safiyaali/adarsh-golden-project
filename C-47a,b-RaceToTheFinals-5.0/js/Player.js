@@ -19,12 +19,16 @@ class Player
 
   update()
   {
-    var playerIndex = "players/player" + this.index;
+    var playerIndex = "player" + this.index;
+    database.ref(playerIndex).set({
+      name:this.name,
+      score:this.score
+    });
   }
 
   static getPlayerInfo()
   {
-    var playerInfoRef = database.ref('players');
+    var playerInfoRef = database.ref('player');
     playerInfoRef.on("value",(data)=>{allPlayers = data.val();})
   }
 /*
